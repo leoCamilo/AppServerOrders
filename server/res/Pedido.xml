@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE pedidos [
+
+        <!ELEMENT pedidos (pedido)>
+
+        <!ELEMENT pedido (cliente, itemDeLinha+)>
+        <!ATTLIST pedido
+                number  CDATA #REQUIRED>
+
+        <!ELEMENT cliente (endereco)>
+        <!ATTLIST cliente
+                customerID  CDATA #REQUIRED
+                name  CDATA #REQUIRED>
+
+        <!ELEMENT endereco (#PCDATA)>
+        <!ATTLIST endereco
+                street  CDATA #REQUIRED
+                city  CDATA #REQUIRED
+                state  CDATA #REQUIRED
+                postalCode  CDATA #REQUIRED
+                country  CDATA #REQUIRED>
+
+        <!ELEMENT itemDeLinha (produto)>
+        <!ATTLIST itemDeLinha
+                quantity  CDATA #REQUIRED>
+
+        <!ELEMENT produto ((software | hardware), fornecedor)>
+        <!ATTLIST produto
+                type CDATA #REQUIRED
+                description  CDATA #REQUIRED
+                unityPrice  CDATA #REQUIRED>
+
+        <!ELEMENT software (#PCDATA)>
+        <!ATTLIST software
+                version  CDATA #REQUIRED>
+
+        <!ELEMENT hardware (#PCDATA)>
+        <!ATTLIST hardware
+                assembly  CDATA #REQUIRED>
+
+        <!ELEMENT fornecedor (endereco)>
+        <!ATTLIST fornecedor
+                number  CDATA #REQUIRED>
+        ]>
+
+<pedidos>
+    <pedido number="123456">
+        <cliente
+                customerID="987654"
+                name="Nome da Silva">
+            <endereco
+                    street="Rua 1"
+                    city="Cidade"
+                    state="Estado"
+                    postalCode="654654"
+                    country="Pais">
+            </endereco>
+        </cliente>
+        <itemDeLinha
+                quantity="5">
+            <produto
+                    description="SAUSAHUasuSAUHSAHUSAUHASUHSAHUASHUSAUHSAU"
+                    unityPrice="99.90"
+                    type="software">
+                <software
+                        version="15.3">
+                </software>
+                <fornecedor
+                        number="231321">
+                    <endereco
+                            street="Rua 2"
+                            city="Cidade3"
+                            state="Estado 2"
+                            postalCode="654654"
+                            country="Pais">
+                    </endereco>
+                </fornecedor>
+            </produto>
+
+        </itemDeLinha>
+    </pedido>
+</pedidos>
