@@ -1,4 +1,4 @@
-# App-Server-Requests
+# App Server Requests
 Simple project with socket communication to request/deliver xml orders.
 
 Was implemented an android app that request something through broadcast UDP socket using 
